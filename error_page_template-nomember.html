@@ -1,204 +1,316 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de">
-<head>
-    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-    <meta http-equiv="content-language" content="de" />
-    <meta name="author" content="Markus Teich" />
-    <meta name="title" content="No StuStaNet-Member" />
-    <meta name="date" content="2012-10-07" />
-    <meta http-equiv="Content-Style-Type" content="text/css" />
-    <title>No StuStaNet-Member</title>
+<!--?xml version="1.0" ?-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Zugang nur für Mitglieder</title>
+    <style type="text/css" media="screen">
+        body {
+            background: #e7e7e7;
+            font-family: Verdana, sans-serif;
+            font-size: 11pt;
+            text-align: justify;
 
-    <style type="text/css">
-		body {
-			font-family: sans-serif;
-		}
-        .heading {
-        	background-color: #89BA50;
-			text-align: center;
-			text-transform: uppercase;
-			padding: 20px
+            margin: 0 auto;
+            max-width: 1200px;
         }
-		td {
-			vertical-align:top;
-			padding: 0px 10px 0px 10px;
-		}
-		#logo {
-			width: auto !important;
-			width: 67%;
-			max-width: 67%;
-		}
-		li {
-			padding: 5px 0px 5px 0px;
-			line-height: 125%;
-		}
-		p {
-			line-height: 125%;
-		}
+
+        .page {
+            background: #ffffff;
+            margin: 50px 50px 5px 50px;
+            border: 2px solid #c0c0c0;
+            padding: 10px;
+        }
+
+        .header {
+            background: #89ba50;
+            border: 2px solid #678f38;
+            background: -moz-linear-gradient(top, #89ba50 0%, #729943 100%);
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #89ba50), color-stop(100%, #729943));
+            background: linear-gradient(to bottom, #89ba50 0%, #729943 100%);
+            text-align: center;
+            padding: 10px;
+            color: #ffffff;
+        }
+
+        .header h1 {
+            color: #ffffff;
+        }
+
+        .body {
+            padding: 10px;
+            line-height: 150%;
+        }
+
+        span.tt {
+            font-family: monospace;
+        }
+
+        span.bold {
+            font-weight: bold;
+        }
+
+        a:link {
+            text-decoration: none;
+            font-weight: bold;
+            color: #C00;
+        }
+
+        a:visited {
+            text-decoration: none;
+            font-weight: bold;
+            color: #999;
+        }
+
+        a:active {
+            text-decoration: none;
+            font-weight: bold;
+            color: #F00;
+            background: #FC0;
+        }
+
+        .member-button {
+            background: none repeat scroll 0 0 #D9650C;
+            background: -moz-linear-gradient(top, #d9650c 0%, #bf590b 100%);
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d9650c), color-stop(100%, #bf590b));
+            background: linear-gradient(to bottom, #d9650c 0%, #bf590b 100%);
+            border: 1px solid #995309;
+            border-radius: 4px 4px 4px 4px;
+            box-shadow: 0 2px 5px -2px #111111, 0 2px 5px 0 rgba(255, 255, 255, 0.3) inset;
+            color: #FFFFFF;
+            display: block;
+            font-size: 1.7em;
+            padding: 0.6em;
+            position: relative;
+            text-decoration: none;
+            vertical-align: middle;
+            text-align: center;
+            line-height: 110%;
+        }
+
+        .nonmember-button {
+            background: none repeat scroll 0 0 #444444;
+            background: -moz-linear-gradient(top, #444444 0%, #282828 100%);
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #444444), color-stop(100%, #282828));
+            background: linear-gradient(to bottom, #444444 0%, #282828 100%);
+            border: 1px solid #222222;
+            border-radius: 4px 4px 4px 4px;
+            box-shadow: 0 2px 5px -2px #111111, 0 2px 5px 0 rgba(255, 255, 255, 0.3) inset;
+            color: #FFFFFF;
+            display: block;
+            font-size: 1.3em;
+            padding: 15px;
+            position: relative;
+            text-decoration: none;
+            vertical-align: middle;
+            text-align: center;
+            line-height: 110%;
+        }
+
+        .button-link {
+            color: #FFF;
+        }
+
+        .nonmember-button:hover, .member-button:hover {
+            box-shadow: black 0px 0px 10px;
+        }
+
+        .nonmember-button, .member-button {
+            box-shadow: black 0px 0px 0px;
+            transition: 0.3s;
+            -webkit-transition: 0.3s;
+            -moz-transition: 0.3s;
+            display: table;
+            margin: auto;
+        }
+
+        .row {
+            display: table;
+            width: 100%;
+
+        }
+
+        .row > div {
+            width: 50%;
+            padding: 0.5em;
+            display: table-cell;
+        }
+
+        .row.buttons > div {
+            vertical-align: middle;
+        }
+
+        .row.cells3 > div {
+            width: 1%;
+            font-size: 1.17em;
+            font-weight: bold;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        .row.cells3.big > div {
+            font-size: 2em;
+        }
+
+        .row.cells3 > div:first-child {
+            width: 49.5%;
+            text-align: right;
+        }
+
+        .row.cells3 > div:last-child {
+            width: 49.5%;
+            text-align: left;
+        }
     </style>
 </head>
 <body>
+<div class="page">
 
-<div align="center">
-    <img id="logo" src="http://dokumente.stusta.mhn.de/logo/StuStaNet_Logo.png">
+    <div class="header">
+        <img style="max-width: 950px; width: 100%" src="http://dokumente.stusta.mhn.de/logo/StuStaNet_Logo.png" alt="Banner">
+
+
+        <div class="row cells3">
+            <div>Fast geschafft</div>
+            <div>-</div>
+            <div>You are almost done</div>
+        </div>
+
+        <div class="row cells3 big">
+            <div>Deine Optionen</div>
+            <div>-</div>
+            <div>Your Options</div>
+        </div>
+
+    </div>
+    <div class="body">
+
+        <span style="text-align:center; font-size:80%; font-style:italic; width:100%; display:block;">
+           English text below
+        </span>
+
+        <div class="row buttons">
+            <div>
+                <a class="member-button" href="https://wiki.stusta.mhn.de/Sprechstunde">
+                    <span class="button-link">Ich möchte nichts mehr einstellen</span>
+                </a>
+            </div>
+            <div>
+                <a class="nonmember-button" href="https://wiki.stusta.mhn.de/Netzwerkanleitung">
+                    <span class="button-link">Ich möchte den Proxy konfigurieren</span>
+                </a>
+            </div>
+        </div>
+
+        <!--
+        <h2> Deutsch </h2>-->
+        <div class="row">
+            <div>
+                <!--<span style="font-size:100%;font-weight: bold;">StuStaNet-Mitglied werden</span>-->
+                <p>
+                    <a href="https://wiki.stusta.mhn.de/Sprechstunde">Werde Mitglied im Verein StuStaNet.</a> Du
+                    erhältst
+                    automatisch Internet-Zugriff über unsere Server und musst daher nichts weiter tun um erweiterten
+                    Zugriff
+                    auf
+                    das Internet zu bekommen. Mit dieser Option lässt sich die größte Bandbreite an Programmen nutzen,
+                    die
+                    einen Internetzugang benötigen.
+                </p>
+
+                <p>
+                    Die Aufnahmegebühr liegt bei 20 Euro, einen regelmäßigen Beitrag gibt es zurzeit nicht. Als Mitglied
+                    profitierst du zusätzlich von unseren zahlreichen <a href="https://wiki.stusta.mhn.de/StuStaNet-Dienste">Diensten</a>,
+                    etwa einer eigenen E-Mail-Adresse, Webspace und dem Zugang zu unserem Daten-/Backupserver.
+                </p>
+            </div>
+
+            <div>
+                <!--<span style="font-size:100%;font-weight: bold;">Den Proxy im Browser einstellen</span>-->
+                <p>
+                    Richte in deinem Web-Browser und deinen Programmen den <a href="https://wiki.stusta.mhn.de/Netzwerkanleitung">Proxy-Server</a>
+                    der Studentenstadt ein. Das ist kostenlos, <i>funktioniert aber nicht für alle Programme und
+                    Protokolle</i>. Beispielsweise lassen sich E-Mails nicht mehr per IMAP oder POP aus dem Internet
+                    laden
+                    und viele Online-Spiele sowie Streaming-Dienste erlauben keine Proxy-Konfiguration.
+                </p>
+
+                <p>
+                    Wenn du Probleme mit der Einrichtung des Proxys hast kannst du entweder <a href="https://wiki.stusta.mhn.de/Sprechstunde">Mitglied im StuStaNet</a> werden (dann ist keine
+                    Konfiguration notwendig) oder einen <a href="http://dokumente.stusta.mhn.de/adminliste/adminliste.html">StuStaNet-Admin</a>
+                    um Hilfe bitten.
+                </p>
+            </div>
+        </div>
+
+        <div style="font-size:75%; text-align:center">
+            Wenn du bereits Mitglied bist und trotzdem diese Meldung bekommst, dann besuche bitte unsere <a href="https://wiki.stusta.mhn.de/Sprechstunde">Sprechstunde</a>.
+            Bei Fragen sende eine E-Mail an <a href="mailto:admins@stusta.mhn.de">admins@stusta.mhn.de</a>
+        </div>
+
+        <hr>
+        <!-- English -->
+
+        <div class="row buttons">
+            <div>
+                <a class="member-button" href="https://wiki.stusta.mhn.de/Sprechstunde/en?uselang=en">
+                    <span class="button-link">I don't want to configure anything else</span>
+                </a>
+            </div>
+
+            <div>
+                <a class="nonmember-button" href="https://wiki.stusta.mhn.de/Netzwerkanleitung/en?uselang=en">
+                    <span class="button-link">I want to configure the proxy</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div>
+                <p>
+                    <a href="https://wiki.stusta.mhn.de/Sprechstunde/en?uselang=en">Become a StuStaNet member.</a> You
+                    will
+                    automatically gain Internet access via our servers and won't have to do anything to enjoy extended
+                    Internet
+                    access. With this option you can use the broadest range of programs that need Internet access.
+                </p>
+
+                <p>
+                    The membership admission fee is 20 Euro, and currently there is no recurring fee. As a member you
+                    also
+                    profit from numerous <a href="https://wiki.stusta.mhn.de/StuStaNet-Dienste/en?uselang=en">Services</a>, such as
+                    your own email address, webspace and access to our data- and backup server.
+                </p>
+            </div>
+            <div>
+                <p>
+                    Configure Studentenstadt's <a href="https://wiki.stusta.mhn.de/Netzwerkanleitung/en?uselang=en">proxy
+                    server</a> in your web
+                    browsers and applications. This is free, but <i>does not work for all programs and protocols</i>.
+                    For
+                    example, you won't be able to access email via IMAP or POP and many online games and streaming
+                    services
+                    will stop working as well, since they don't allow for proxy configurations.
+                </p>
+
+                <p>
+                    If you experience problems with configuring the proxy you can either <a href="https://wiki.stusta.mhn.de/Sprechstunde/en?uselang=en">become a StuStaNet member</a> (then
+                    no further
+                    configuration is needed with your programs) or you can ask a <a href="http://dokumente.stusta.mhn.de/adminliste/adminliste.html">StuStaNet administrator</a> for
+                    help.
+                </p>
+            </div>
+        </div>
+
+        <div style="font-size:75%; text-align:center">
+            If you are already member of the StuStaNet e. V. and see this message, please consult with us during our <a href="https://wiki.stusta.mhn.de/Sprechstunde/en?uselang=en">Office hours</a>.
+            If you have any questions, send a e-mail to <a href="mailto:admins@stusta.mhn.de">admins@stusta.mhn.de</a>
+        </div>
+
+    </div>
 </div>
-<h1 class="heading">Kein StuStaNet Mitglied — No StuStaNet Member</h1>
-
-<table><tr><td width="50%">
-
-<p>
-	Herzlichen Glückwunsch, du hast deine IP-Adresse richtig eingestellt.
-	Jetzt sind es nur noch wenige Schritte, bis du im Internet surfen kannst.
-</p>
-
-<h2>Warum bekomme ich diese Seite angezeigt?</h2>
-<p>
-	Dafür kann es mehrere Gründe geben:
-</p>
-<ul>
-	<li>Du bist neu eingezogen und hast die nötigen Einstellungen noch nicht getroffen.
-	Richte deinen Rechner ein, dass er den <a href="#proxy">Proxy</a> verwendet oder werde
-	<a href="#member">Mitglied</a> im StuStaNet.</li>
-	<li>Du bist noch kein Mitglied, aber dein Anschluss war noch vom Vormieter deines Zimmers
-	freigeschaltet, diese Freischaltung wurde jetzt deaktiviert, da der Vormieter aus- oder
-	umgezogen ist. Auch hierbei kannst du den <a href="#proxy">Proxy</a> einstellen oder
-	<a href="#member">Mitglied</a> im StuStaNet werden.</li>
-	<li>Du bist bereits Mitglied im StuStaNet, bist aber in ein neues Zimmer umgezogen.
-	In diesem Fall schreibe eine E-Mail mit deinem Namen, deiner Mitgliedsnummer (die du
-	deinem Mitgliedsausweis entnehmen kannst) sowie deiner alten und neuen Adresse an unseren
-	<a href="mailto:vorstand@stustanet.de?subject=Umzugsantrag">Vorstand</a>.
-	Wenn du deinen Mitgliedsausweis noch nicht abgeholt hast,
-	kannst du das gegen Vorlage eines Ausweises in der Sprechstunde tun.</li>
-</ul>
-
-<h2 id="proxy">Proxy einstellen</h2>
-<p>
-	Den zum Surfen notwendigen Proxy kannst du mittels den Anweisungen in der
-	<a href="http://dokumente.stusta.mhn.de/netzwerkanleitung/Netzwerkanleitung.pdf">Netzwerkanleitung (pdf)</a>
-	oder im <a href="https://wiki.stusta.mhn.de/Proxy-Konfiguration_diverser_Programme">Wiki</a> einstellen.
-    Solltest du dabei Probleme haben, so bitte einen <a
-	href="http://dokumente.stusta.mhn.de/adminliste/adminliste.html">Hausadministrator</a>
-    um Hilfe.
-</p>
-
-<h2>StuStaNet</h2>
-<p>
-	Das StuStaNet ist der Verein, der in der Studentenstadt das Netzwerk
-	betreut. Um im Internet surfen zu können, musst du den <a href="#proxy">Proxy einstellen</a>.
-	Wenn du auch andere Online Services wie z.B. Skype, ICQ, E-Mail oder Online Gaming
-	nutzen möchtest, musst du im StuStaNet <a href="#member">Mitglied werden</a>.
-</p>
-
-<h2 id="member">StuStaNet Mitglied werden</h2>
-<p>
-	Der volle Internetzugang ist nur für StuStaNet Mitglieder
-	verfügbar. Um unsere <a href="https://wiki.stusta.mhn.de/StuStaNet-Dienste">Dienste</a>
-	nutzen zu können, musst du StuStaNet Mitglied werden.
-	Mitglied kannst du in unserer <a href="https://wiki.stusta.mhn.de/Sprechstunde">Sprechstunde</a>
-	am Donnerstag und in der Vorlesungszeit auch Montags von 19 - 19:30 Uhr im Blauen Haus
-	Zimmer 028 gegen eine Gebühr von aktuell 10 Euro werden.
-</p>
-<p>
-	Der volle Internetzugriff wird dann innerhalb von wenigen Tagen
-	freigeschaltet ohne das weitere Einstellungen vorgenommen werden müssen.
-	Bis dahin kannst du auch den <a href="#proxy">Proxy</a> einstellen.
-</p>
-<p>	
-	Frühestens eine Woche nach dem Antrag auf Mitgliedschaft kannst du
-	ebenfalls in der Sprechstunde deinen Mitgliedsausweis abholen. Auf diesem
-	steht deine Mitgliedsnummer und das Passwort für die weiteren Dienste.
-</p>
-
-
-</td><td lang="en" xml:lang="en" width="50%">
-
-
-<p>
-	Congratulations, you have set up your IP-address correctly.
-	Just a few more steps are missing until you can browse the internet.
-</p>
-
-<h2>Why am I seeing this page?</h2>
-<p>
-	There are several possible reasons:
-</p>
-<ul>
-	<li>You have just moved in and have not yet configured your computer completely.
-	Change your network settings to use the <a href="#enproxy">proxy</a> or become
-	a <a href="#enmember">member</a> of the StuStaNet.</li>
-	<li>You are not yet a StuStaNet member but your connection has been active
-	because the previous resident of your room was a StuStaNet member.
-	As he has now moved, your connection has been deactivated.
-	At this point you can either set up the <a href="#enproxy">proxy</a> or become
-	a StuStaNet <a href="#enmember">member</a> as well.</li>
-	<li>You are already a StuStaNet member but you have moved to a new room.
-	In this case just write an e-mail containing your name, your membership id (which
-	can be found on your membership card), as well as your previous and new address to our
-	<a href="mailto:vorstand@stustanet.de?subject=notice of move">management</a>.
-	If you have not collected your membership card yet, you can get it against
-	with proof of a valid id during our office hours.</li>
-</ul>
-
-<h2 id="enproxy">Proxy setup</h2>
-<p>
-	To use the proxy, which is necessary to browse the web, follow the instructions in the
-	<a href="http://dokumente.stusta.mhn.de/netzwerkanleitung/Netzwerkanleitung_EN.pdf">manual (pdf)</a>
-	or the <a href="https://wiki.stusta.mhn.de/Proxy-Konfiguration_diverser_Programme">wiki (german)</a>.
-	If you have problems doing so, please contact a
-	<a href="http://dokumente.stusta.mhn.de/adminliste/adminliste.html">house administrator</a>
-    for help.
-</p>
-
-<h2>StuStaNet</h2>
-<p>
-	The StuStaNet is the society, which is in charge of the network in Studentenstadt.
-	To browse the internet you have to set up the <a href="#enproxy">proxy</a>.
-	If you wish to use other online services such as Skype, ICQ, e-mail or online gaming,
-	you have to become a StuStaNet <a href="#enmember">member</a>.
-</p>
-
-<h2 id="enmember">Becoming a StuStaNet member</h2>
-<p>
-	Full internet access is only available to StuStaNet members.
-	To use our <a href="https://wiki.stusta.mhn.de/StuStaNet-Dienste/en">services</a>
-	you have to become a StuStaNet member. You can do this against a current fee of
-	10 Euros during our
-	<a href="https://wiki.stusta.mhn.de/Sprechstunde/en">office hours</a>
-	on Thursday, during lecture times also on Monday
-	between 7pm and 7:30pm in room 028 of the Blue House.
-</p>
-<p>
-	Full internet access will then be activated within a few days without the
-	need of further configuration on your side. Until then you can use the 
-	<a href="#enproxy">proxy</a> to at least be able to browse the web.
-</p>
-<p>	
-	At the earliest one week after your application you should be able to collect your
-	membership card during our office hours. Your membership id and your password
-	for our additional services will be printed on your card.
-</p>
-
-
-
-</td></tr></table>
-
-<div style="text-align:center;padding:20px;">
-<h2 id="services">Dienste — Services</h2>
-<a href="https://wiki.stusta.mhn.de">StuSta Wiki</a> |
-<a href="https://wiki.stusta.mhn.de/Newsgroup">Newsgroup</a> |
-<a href="https://wiki.stusta.mhn.de/Chat">Chat</a> |
-<a href="https://wiki.stusta.mhn.de/Jabber">Jabber</a> |
-<a href="https://wiki.stusta.mhn.de/Mailaccount_einrichten">Mail</a> |
-<a href="https://wiki.stusta.mhn.de/Mumble">VoIP</a> |
-<a href="https://home.stusta.mhn.de">Webhosting Server</a> |
-<a href="https://wiki.stusta.mhn.de/Datenserver">Backup Server</a> |
-<a href="https://wiki.stusta.mhn.de/FTP-Server">FTP Server</a> |
-<a href="https://wiki.stusta.mhn.de/Minecraft">Minecraft Server</a>
+<div style="text-align:center; font-size:11px;margin:15px 0 20px 0;"><a href="https://www.stusta.mhn.de/impressum">Impressum</a>
 </div>
 
-<h1 class="heading">Kein StuStaNet Mitglied — No StuStaNet Member</h1>
-</body>
-</html>
 
+
+</body></html>
