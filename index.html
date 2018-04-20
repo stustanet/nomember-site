@@ -1,200 +1,235 @@
-<!--?xml version="1.0" ?-->
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-			<title>Zugang nur für Mitglieder</title>
-			<style type="text/css" media="screen">
-				body {
-					background: #e7e7e7;
-					font-family: Verdana, sans-serif;
-					font-size: 11pt;
-					text-align: justify;
-					margin: 0 auto;
-					max-width: 1200px;
-				}
+<!doctype html>
+<html>
+	<head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+		<title>Access for Members only</title>
+		<style type="text/css">
+			body {
+				background: #e7e7e7;
+				font-family: Verdana, sans-serif;
+				font-size: 11pt;
+				text-align: justify;
+				margin: 0 auto;
+				max-width: 1200px;
+				min-width: 750px;
+			}
 
-				.page {
-					background: #ffffff;
-					margin: 50px 50px 5px 50px;
-					border: 2px solid #c0c0c0;
-					padding: 10px;
-				}
+			.page {
+				background: #ffffff;
+				margin: 15px 20px;
+				border: 2px solid #c0c0c0;
+				padding: 10px;
+			}
 
-				.header {
-					background: #89ba50;
-					border: 2px solid #678f38;
-					background: -moz-linear-gradient(top, #89ba50 0%, #729943 100%);
-					background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #89ba50), color-stop(100%, #729943));
-					background: linear-gradient(to bottom, #89ba50 0%, #729943 100%);
-					text-align: center;
-					padding: 10px;
-					color: #ffffff;
-				}
+			header {
+				background: #89ba50;
+				border: 2px solid #678f38;
+				background: -moz-linear-gradient(top, #89ba50 0%, #729943 100%);
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #89ba50), color-stop(100%, #729943));
+				background: linear-gradient(to bottom, #89ba50 0%, #729943 100%);
+				text-align: center;
+				padding: 10px;
+				color: #ffffff;
+			}
 
-				.header h1 {
-					color: #ffffff;
-				}
+			header img {
+				max-width: 950px;
+				width: 100%;
+			}
 
-				.body {
-					padding: 10px;
-					line-height: 150%;
-				}
+			header h1 {
+				color: #ffffff;
+			}
 
-				span.tt {
-					font-family: monospace;
-				}
+			.body {
+				padding: 10px;
+			}
 
-				span.bold {
-					font-weight: bold;
-				}
+			span.tt {
+				font-family: monospace;
+			}
 
-				a:link {
-					text-decoration: none;
-					font-weight: bold;
-					color: #C00;
-				}
+			span.bold {
+				font-weight: bold;
+			}
 
-				a:visited {
-					text-decoration: none;
-					font-weight: bold;
-					color: #999;
-				}
+			a:link {
+				text-decoration: none;
+				font-weight: bold;
+				color: #C00;
+			}
 
-				a:active {
-					text-decoration: none;
-					font-weight: bold;
-					color: #F00;
-					background: #FC0;
-				}
+			a:visited {
+				text-decoration: none;
+				font-weight: bold;
+				color: #999;
+			}
 
-				h2 {
-					text-align: center;
-				}
+			a:active {
+				text-decoration: none;
+				font-weight: bold;
+				color: #F00;
+				background: #FC0;
+			}
 
-				.member-button {
-					background: none repeat scroll 0 0 #D9650C;
-					background: -moz-linear-gradient(top, #d9650c 0%, #bf590b 100%);
-					background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d9650c), color-stop(100%, #bf590b));
-					background: linear-gradient(to bottom, #d9650c 0%, #bf590b 100%);
-					border: 1px solid #995309;
-					border-radius: 4px 4px 4px 4px;
-					box-shadow: 0 2px 5px -2px #111111, 0 2px 5px 0 rgba(255, 255, 255, 0.3) inset;
-					color: #FFFFFF;
-					display: block;
-					font-size: 1.7em;
-					padding: 0.6em;
-					position: relative;
-					text-decoration: none;
-					vertical-align: middle;
-					text-align: center;
-					line-height: 110%;
-				}
+			h2 {
+				text-align: center;
+				margin: 20px 0 0;
+			}
 
-				.nonmember-button {
-					background: none repeat scroll 0 0 #444444;
-					background: -moz-linear-gradient(top, #444444 0%, #282828 100%);
-					background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #444444), color-stop(100%, #282828));
-					background: linear-gradient(to bottom, #444444 0%, #282828 100%);
-					border: 1px solid #222222;
-					border-radius: 4px 4px 4px 4px;
-					box-shadow: 0 2px 5px -2px #111111, 0 2px 5px 0 rgba(255, 255, 255, 0.3) inset;
-					color: #FFFFFF;
-					display: block;
-					font-size: 1.3em;
-					padding: 15px;
-					position: relative;
-					text-decoration: none;
-					vertical-align: middle;
-					text-align: center;
-					line-height: 110%;
-				}
+			.button {
+				display: block;
+				cursor: pointer;
+				position: relative;
+				text-decoration: none;
+				vertical-align: middle;
+				text-align: center;
+				line-height: 110%;
+				color: #FFFFFF;
+				border-radius: 4px 4px 4px 4px;
+				box-shadow: 0 2px 5px -2px #111111, 0 2px 5px 0 rgba(255, 255, 255, 0.3) inset;
+			}
 
-				.button-link {
-					color: #FFF;
-				}
+			.member-button {
+				background: none repeat scroll 0 0 #D9650C;
+				background: -moz-linear-gradient(top, #d9650c 0%, #bf590b 100%);
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d9650c), color-stop(100%, #bf590b));
+				background: linear-gradient(to bottom, #d9650c 0%, #bf590b 100%);
+				border: 1px solid #995309;
+				font-size: 1.7em;
+				padding: 0.6em;
 
-				.nonmember-button:hover, .member-button:hover {
-					box-shadow: black 0px 0px 10px;
-				}
+			}
 
-				.nonmember-button, .member-button {
-					box-shadow: black 0px 0px 0px;
-					transition: 0.3s;
-					-webkit-transition: 0.3s;
-					-moz-transition: 0.3s;
-					display: table;
-					margin: auto;
-				}
+			.nonmember-button {
+				background: none repeat scroll 0 0 #444444;
+				background: -moz-linear-gradient(top, #444444 0%, #282828 100%);
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #444444), color-stop(100%, #282828));
+				background: linear-gradient(to bottom, #444444 0%, #282828 100%);
+				border: 1px solid #222222;
+				font-size: 1.3em;
+				padding: 15px;
+			}
 
-				.row {
-					display: table;
-					width: 100%;
-				}
+			.button-link {
+				color: #FFF;
+			}
 
-				.row > div {
-					width: 50%;
-					padding: 1em;
-					display: table-cell;
-				}
+			.nonmember-button:hover, .member-button:hover {
+				box-shadow: black 0px 0px 10px;
+			}
 
-				.row.buttons > div {
-					vertical-align: middle;
-				}
+			.nonmember-button, .member-button {
+				box-shadow: black 0px 0px 0px;
+				transition: 0.3s;
+				-webkit-transition: 0.3s;
+				-moz-transition: 0.3s;
+				display: table;
+				margin: 15px auto;
+			}
 
-				.row.cells3 > div {
-					width: 1%;
-					font-size: 1.17em;
-					font-weight: bold;
-					padding-left: 5px;
-					padding-right: 5px;
-				}
+			.row {
+				display: table;
+				width: 100%;
+			}
 
-				.row.cells3.big > div {
-					font-size: 2em;
-				}
+			.row > div {
+				width: 50%;
+				padding: .3em 1em .1em;
+				display: table-cell;
+			}
 
-				.row.cells3 > div:first-child {
-					width: 49.5%;
-					text-align: right;
-				}
+			.row p {
+				margin: 0;
+				line-height: 1.5;
+			}
 
-				.row.cells3 > div:last-child {
-					width: 49.5%;
-					text-align: left;
-				}
+			.row ul {
+				margin-top: 10px;
+			}
 
-			</style>
+			.row ul li {
+				margin-top: 5px;
+				line-height: 1.4;
+			}
+
+			.row.buttons > div {
+				vertical-align: middle;
+			}
+
+			header .row > div {
+				font-size: 2em;
+				font-weight: bold;
+				padding: 10px 5px 0px;
+				text-align: center;
+				width: 50%;
+			}
+		</style>
 	</head>
 	<body>
 		<div class="page">
-			<div class="header">
-				<img style="max-width: 950px; width: 100%" src="http://dokumente.stusta.de/logo/StuStaNet_Logo.png" alt="Banner">
-
-				<div class="row cells3 big">
-					<div style="text-align: center;">StuStaNet e. V. heißt dich herzlich willkommen!</div>
-					<div style="text-align: center;">StuStaNet e. V. welcomes you!</div>
+			<header>
+				<img src="https://dokumente.stusta.de/logo/StuStaNet_Logo.png" alt="StuStaNet Logo">
+				<div class="row">
+					<div>Deutsch</div>
+					<div>English</div>
 				</div>
-			</div>
+			</header>
 
 			<div class="body">
 				<div class="row">
 					<div>
-						<p> Herzlichen Glückwunsch! Du hast deine IP-Adresse richtig
-							eingestellt. Jetzt sind es nur noch wenige Schritte, bis du im
-							Internet surfen kannst. </p>
+						<p>Herzlichen Glückwunsch! Du hast deine IP-Adresse richtig eingestellt. Jetzt sind es nur noch wenige Schritte, bis du im Internet surfen kannst.</p>
 					</div>
 					<div>
-						<p> Congratulations! You have set up your IP-address correctly.
-							Just a few more steps are missing until you can browse the
-							internet. </p>
+						<p>Congratulations! You have successfully set up your IP address configuration. Just a few more steps are necessary until you can browse the Internet.</p>
 					</div>
 				</div>
 				<div class="row">
 					<div>
-						<p>Das Internet der StuSta wird erfolgreich vom <a href="https://wiki.stusta.de/Mitmachen">StuStaNet</a> von Studenten als Freizeitspa&szlig; betrieben.</p>
+						<p>Das Internet in der StuSta wird von motivierten Studenten im Verein <a href="https://wiki.stusta.de/Admin_werden">StuStaNet</a> in derren Freizeit betrieben.</p>
 					</div>
 					<div>
-						<p>The Internet of StuSta is run successfully by StuStaNet and students as free-time fun.</p>
+						<p>The Internet in the StuSta is operated by motivated students in the <a href="https://wiki.stusta.de/Admin_werden/en">StuStaNet</a> association in their free time.</p>
+					</div>
+				</div>
+
+				<div class="row">
+					<div>
+						<h2>Warum bekomme ich diese Seite angezeigt?</h2>
+					</div>
+					<div>
+						<h2>Why am I seeing this page?</h2>
+					</div>
+				</div>
+				<div class="row">
+					<div>
+						<p>Mögliche Gründe:</p>
+						<ul>
+							<li>Du bist gerade neu eingezogen.</li>
+							<li>Du bist kürzlich eingezogen und der Vormieter deines Zimmers war StuStaNet Mitglied. Die Mitgliedsdienste wurden nun deaktiviert.</li>
+							<li>Du bist bereits Mitglied, aber in dieses Zimmer umgezogen.
+								Schreib an den <a href="mailto:vorstand@stustanet.de?subject=Umzugsantrag">StuStaNet Vorstand</a>
+								damit die Mitgliederdienste in deinem Zimmer freigeschaltet werden.
+							</li>
+						</ul>
+					</div>
+					<div>
+						<p>Possible reasons:</p>
+						<ul>
+							<li>You you just moved in.</li>
+							<li>You moved in recently and the previous tenant tenant of your room was a StuStaNet member. The member services have now been deactivated.</li>
+							<li>You moved within the StuSta. If you became a member of StuStaNet before, then just write an e-mail to the <a href="mailto:vorstand@stustanet.de?subject=notice%20of%20move">StuStaNet executive board</a> so that the membership services are activated in your new room.</li>
+						</ul>
+					</div>
+				</div>
+				<div class="row">
+					<div>
+						<h2>Was muss ich jetzt tun?</h2>
+					</div>
+					<div>
+						<h2>What do I have to do now?</h2>
 					</div>
 				</div>
 
@@ -205,55 +240,32 @@
 				</div>
 				<div class="row buttons">
 					<div>
-						<a name="member"></a>
-						<a class="member-button" href="https://reg.stusta.de/">
+						<a class="button member-button" href="https://reg.stusta.de/">
 							<span class="button-link">Die einfache Lösung</span>
 						</a>
 					</div>
 					<div>
-						<a name="enmember"></a>
-						<a class="member-button" href="https://reg.stusta.de">
+						<a class="button member-button" href="https://reg.stusta.de">
 							<span class="button-link">The simple solution</span>
 						</a>
 					</div>
 				</div>
 
-				<!-- <h2> Deutsch </h2> -->
 				<div class="row">
-					<div> <!--<span style="font-size:100%;font-weight: bold;">StuStaNet-Mitglied werden</span> -->
-						<p>
-							<a href="https://reg.stusta.de">Werde Mitglied im Verein StuStaNet.</a>
-							Du erhältst automatisch Internet-Zugriff über unsere Server und
-							musst dich um nichts weiter kümmern, um erweiterten Zugriff auf
-							das Internet zu bekommen. Mit dieser Option kannst du das Internet
-							wie gewohnt benutzen.
-						</p>
-
-						<p>
-							Die <a href="https://wiki.stusta.de/Sprechstunde">einmalige Aufnahmegebühr</a>
-							liegt bei einmalig 20 Euro. Als Mitglied
-							profitierst du zusätzlich von unseren zahlreichen
-							<a href="https://wiki.stusta.de/StuStaNet-Dienste">Diensten</a>,
-							etwa einer eigenen E-Mail-Adresse, Webspace und dem Zugang zu
-							unserem Daten-/Backupserver.
-						</p>
+					<div>
+						<p><a href="https://reg.stusta.de">Werde Mitglied im StuStaNet.</a> Du erhältst automatisch Internet-Zugriff über unsere Server und musst dich um nichts weiter kümmern, um erweiterten Zugriff auf das Internet zu bekommen. Mit dieser Option kannst du das Internet wie von zu Hause gewohnt benutzen.</p>
 					</div>
 					<div>
-						<p>
-							<a href="https://reg.stusta.de">Become a StuStaNet member.</a>
-							You will automatically gain Internet access via our servers and
-							won't have to do anything else to enjoy extended Internet access.
-							With this option you can use the Internet the way you always do.
+						<p>The <a href="https://wiki.stusta.de/Sprechstunde/en">membership admission fee</a> is a one-time payment of 20 Euro (payable only in cash). As a member you also profit from numerous <a href="https://wiki.stusta.de/StuStaNet-Dienste/en">member services</a>, such as your own email address, webspace, cloud storage and access to our data- and backup server.
 						</p>
-
-						<p>
-							The <a href="https://wiki.stusta.de/Sprechstunde/en?uselang=en">membership admission fee</a>
-							is a one-time payment of 20 Euro.
-							As a member you also profit from numerous
-							<a href="https://wiki.stusta.de/StuStaNet-Dienste/en?uselang=en">Services</a>,
-							such as your own email address, webspace and access to our
-							data- and backup server.
-						</p>
+					</div>
+				</div>
+				<div class="row">
+					<div>
+						<p><a href="https://reg.stusta.de">Become a StuStaNet member.</a> You will automatically gain Internet access via our servers and won't have to do anything else to enjoy extended Internet access. With this option you can use the Internet the way you always do.</p>
+					</div>
+					<div>
+						<p>Die <a href="https://wiki.stusta.de/Sprechstunde">Aufnahmegebühr</a> liegt bei einmalig 20 Euro (nur Barzahlung möglich). Als Mitglied profitierst du zusätzlich von unseren zahlreichen <a href="https://wiki.stusta.de/StuStaNet-Dienste">Diensten</a>, etwa einer eigenen E-Mail-Adresse, Webspace, Cloudspeicher und dem Zugang zu unserem Daten-/Backupserver.</p>
 					</div>
 				</div>
 
@@ -265,13 +277,11 @@
 
 				<div class="row buttons">
 					<div>
-						<a name="proxy"></a>
 						<a class="nonmember-button" href="https://wiki.stusta.de/Netzwerkanleitung">
 							<span class="button-link">Internetzugang über den Proxy-Server</span>
 						</a>
 					</div>
 					<div>
-						<a name="enproxy"></a>
 						<a class="nonmember-button" href="https://wiki.stusta.de/Netzwerkanleitung/en?uselang=en">
 							<span class="button-link">Internet access via the proxy server</span>
 						</a>
@@ -319,55 +329,10 @@
 						</p>
 					</div>
 				</div>
-
-				<div class="row">
-					<div>
-						<h2>Warum bekomme ich diese Seite angezeigt?</h2>
-					</div>
-					<div>
-						<h2>Why am I seeing this page?</h2>
-					</div>
-				</div>
-				<div class="row">
-					<div>
-						<p>Mögliche Gründe:</p>
-						<ul>
-							<li>
-								Du bist neu eingezogen.
-							</li>
-							<li>
-								Dein Anschluss war noch vom Vormieter deines Zimmers freigeschaltet,
-								nun aber nicht mehr.
-							</li>
-							<li>
-								Du bist bereits Mitglied, aber in dieses Zimmer umgezogen.
-								Schreib an <a href="mailto:vorstand@stustanet.de?subject=Umzugsantrag">Vorstand</a>
-								damit das Internet in deinem Zimmer freigeschaltet wird.
-							</li>
-						</ul>
-					</div>
-
-					<div>
-						<p>Possible reasons:</p>
-						<ul>
-							<li>
-								You moved into this room.
-							</li>
-							<li>
-								The room was activated for your previous tenant, but was now deactivated.
-							</li>
-							<li>
-								In your old room in StuSta, you were a member of StuStaNet, then you have to write an e-mail to
-								the <a href="mailto:vorstand@stustanet.de?subject=notice%20of%20move">management</a>
-								so the Internet in your room is activated.
-							</li>
-						</ul>
-					</div>
-				</div>
 			</div>
 		</div>
 		<div style="text-align:center; font-size:11px;margin:15px 0 20px 0;">
-			<a href="https://www.stusta.de/impressum">Impressum</a>
+			<a href="https://stustanet.de/impressum">Impressum</a>
 		</div>
-
-</body></html>
+	</body>
+</html>
